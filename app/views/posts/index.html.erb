@@ -1,0 +1,45 @@
+<h1>Listing posts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Link</th>
+      <th>Refer</th>
+      <th>Category</th>
+      <th>Excerpt</th>
+      <th>Content</th>
+      <th>Status</th>
+      <th>Parent</th>
+      <th>Type</th>
+      <th>Comment status</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @posts.each do |post| %>
+      <tr>
+        <td><%= post.title %></td>
+        <td><%= post.link %></td>
+        <td><%= post.refer %></td>
+        <td><%= post.category %></td>
+        <td><%= post.excerpt %></td>
+        <td><%= post.content %></td>
+        <td><%= post.status %></td>
+        <td><%= post.parent %></td>
+        <td><%= post.post_type %></td>
+        <td><%= post.comment_status %></td>
+        <td><%= link_to 'Show', post %></td>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Post', new_post_path %>
