@@ -1,4 +1,8 @@
 Admin::Application.routes.draw do
+  resources :user_types
+
+  resources :post_types
+
   resources :categories
 
   devise_for :users

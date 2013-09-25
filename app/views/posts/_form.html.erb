@@ -24,8 +24,8 @@
     <%= f.text_field :refer %>
   </div>
   <div class="field">
-    <%= f.label :category %><br>
-    <%= f.number_field :category %>
+    <%= f.label :category_id %><br>
+    <%= select_tag "post[category_id]", options_from_collection_for_select(@category, "id", "name") %>
   </div>
   <div class="field">
     <%= f.label :excerpt %><br>
@@ -37,7 +37,7 @@
   </div>
   <div class="field">
     <%= f.label :status %><br>
-    <%= f.number_field :status %>
+    <%= check_box("post", "status", {}, 1, 0) %>
   </div>
   <div class="field">
     <%= f.label :parent %><br>
@@ -45,11 +45,11 @@
   </div>
   <div class="field">
     <%= f.label :post_type %><br>
-    <%= f.number_field :post_type %>
+    <%= select_tag "post_type", options_from_collection_for_select(@post_type, "id", "name") %>
   </div>
   <div class="field">
     <%= f.label :comment_status %><br>
-    <%= f.number_field :comment_status %>
+    <%= check_box("post", "comment_status", {}, 1, 0) %>
   </div>
   <div class="actions">
     <%= f.submit %>

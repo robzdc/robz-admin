@@ -1,15 +1,35 @@
 <!DOCTYPE html>
-<html>
+<!--
+      |                            |
+  _ \ |  _ \ __ `__ \  | __ \   _` |
+  __/ |  __/ |   |   | | |   | (   |
+\___|_|\___|_|  _|  _|_|_|  _|\____|
+                       web solutions
+-->
+<!--[if lt IE 7]> <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
-  <title>Admin</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<%= yield %>
-
+    <meta charset="utf-8" />
+    <title>Home | elemind, web solutions</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="elemind.com" name="author" />
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body class="home" data-spy="scroll" data-target=".documentation-nav">
+    <%= notice %>
+    <%= alert %>
+    <div class="container">
+        <div class="row">
+          <%= render 'shared/header' %>
+          <div class="main span9">
+            <%= yield %>
+          </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130924171113) do
+ActiveRecord::Schema.define(version: 20130925164604) do
 
   create_table "categories", force: true do |t|
     t.string   "name",                    null: false
@@ -22,19 +22,32 @@ ActiveRecord::Schema.define(version: 20130924171113) do
     t.datetime "updated_at"
   end
 
+  create_table "post_types", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "posts", force: true do |t|
     t.string   "title"
-    t.integer  "category"
+    t.integer  "category_id"
     t.string   "excerpt",        limit: 140
     t.text     "content"
-    t.integer  "status",                     default: 1
+    t.integer  "status",         limit: 4,   default: 1
     t.integer  "parent",                     default: 0
-    t.integer  "post_type"
-    t.integer  "comment_status",             default: 1
+    t.integer  "post_type",      limit: 4
+    t.integer  "comment_status", limit: 4,   default: 1
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "link"
     t.string   "refer"
+  end
+
+  create_table "user_types", force: true do |t|
+    t.string   "name",       null: false
+    t.string   "icon"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
@@ -54,7 +67,7 @@ ActiveRecord::Schema.define(version: 20130924171113) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
 
 end

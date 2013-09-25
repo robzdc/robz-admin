@@ -1,0 +1,71 @@
+<header class="span3">
+  <div class="affix">
+    <div class="navbar span3">
+      <div class="navbar-inner">
+        <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+          <i class="icon-reorder"></i>
+        </a>
+        <a class="brand span2" href="index.php">
+          <img alt="" src="img/logo.png" />
+        </a>
+        <nav class="nav-collapse collapse">
+          <ul class="nav">
+            <%= render 'shared/menu/registration' %>
+            <%= render 'shared/menu/login' %>
+            <li class="nav-home"><a href="index.php">Home</a></li>
+            <li class="nav-about"><a href="about.php">About</a></li>
+            <li class="nav-services"><a href="services.php">Services</a></li>
+            <li class="dropdown nav-portfolio">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Portfolio
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="nav-portfolio-2"><a href="portfolio-2.php">2 columns</a></li>
+                <li class="nav-portfolio-3"><a href="portfolio-3.php">3 columns</a></li>
+                <li class="nav-portfolio-item"><a href="portfolio-item.php">Portfolio item</a></li>
+              </ul>
+            </li>
+            <li class="dropdown nav-pages">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                Pages
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="nav-content"><a href="page-content.php">Content</a></li>
+                <li class="nav-content-sidebar"><a href="page-content-sidebar.php">Content sidebar</a></li>
+                <li class="nav-sidebar-content"><a href="page-sidebar-content.php">Sidebar content</a></li>
+              </ul>
+            </li>
+            <li class="nav-contact"><a href="contact.php">Contact</a></li>
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                More
+                <b class="caret"></b>
+              </a>
+              <ul class="dropdown-menu">
+                <li class="nav-features"><a href="features.php">Features</a></li>
+                <li class="nav-feature-slider"><a href="feature-slider.php">Slider</a></li>
+                <li class="nav-feature-video"><a href="feature-video.php">Video</a></li>
+                <li class="nav-feature-masonry-isotope"><a href="feature-masonry-isotope.php">Masonry - Isotope</a></li>
+                <li class="nav-feature-gallery"><a href="feature-gallery.php">Gallery</a></li>
+                <li class="nav-feature-pricing"><a href="feature-pricing.php">Pricing</a></li>
+                <li class="nav-news"><a href="news.php">News</a></li>
+                <li class="nav-news-item"><a href="news-item.php">News item</a></li>
+                <li class="nav-feature-miscellanea"><a href="feature-miscellanea.php">Miscellanea</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div><!-- /navbar-inner -->
+    </div><!-- /navbar -->
+    <aside class="span3 text-center hidden-phone">
+      <ul class="social inline">
+        <li><a class="btn btn-small" href="#"><i class="icon-facebook"></i></a></li>
+        <li><a class="btn btn-small" href="https://twitter.com/robzdc"><i class="icon-twitter"></i></a></li>
+        <li><a class="btn btn-small" href="#"><i class="icon-linkedin"></i></a></li>
+      </ul>
+      <p><a href="http://robzdc.com">robzdc</a></p>
+    </aside>
+  </div><!-- /affix -->
+</header>

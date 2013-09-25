@@ -1,10 +1,11 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_post, only: [:edit, :update, :destroy]
+  before_action :get_post, only: [:show]
 
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.joins(:category).select("posts.id, posts.title, posts.link, posts.status, posts.post_type, posts.comment_status, categories.name")
   end
 
   # GET /posts/1
@@ -15,10 +16,14 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @category = Category.all
+    @post_type = PostType.all
   end
 
   # GET /posts/1/edit
   def edit
+    @category = Category.all
+    @post_type = PostType.all
   end
 
   # POST /posts
@@ -41,6 +46,7 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1.json
   def update
     respond_to do |format|
+      puts post_params
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
         format.json { head :no_content }
@@ -66,9 +72,13 @@ class PostsController < ApplicationController
     def set_post
       @post = Post.find(params[:id])
     end
+  
+    def get_post
+      @post = Post.joins(:category).select("posts.*, categories.name").first
+    end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :link, :refer, :category, :excerpt, :content, :status, :parent, :post_type, :comment_status)
+      params.require(:post).permit(:title, :link, :refer, :category_id, :excerpt, :content, :status, :parent, :post_type, :comment_status)
     end
 end
