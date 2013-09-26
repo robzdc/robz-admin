@@ -8732,7 +8732,7 @@ h5 small,
 h6 small {
   display: block;
   font-size: 60%;
-  font-weight: 200;
+  font-weight: bold;
   line-height: 1.25;
   text-transform: lowercase;
   color: #21786c;
@@ -9495,8 +9495,12 @@ a:focus {
   margin: 2em 0;
   text-align: center;
 }
-.navbar .brand img {
+.navbar .brand span {
   display: inline;
+  font-size: 35px;
+  text-shadow: none;
+  font-weight: bold;
+  color: #5987CC;
 }
 .navbar-inner {
   background: none;

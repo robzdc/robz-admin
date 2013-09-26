@@ -1,4 +1,5 @@
 class PostTypesController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_post_type, only: [:show, :edit, :update, :destroy]
 
   # GET /post_types

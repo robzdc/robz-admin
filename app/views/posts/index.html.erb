@@ -1,20 +1,20 @@
-
-
-    <% @posts.each do |post| %>
-      <article>
-        <h1 class="title-link"><small><%= post.name %></small><%= link_to post.title, post.link, :target => "_blank" %></h1>
-        
-        <td><%= post.status %></td>
-        <td><%= post.post_type %></td>
-        <td><%= post.comment_status %></td>
-        <%= link_to '', post, :class => "icon-eye-open" %>
-        <%= link_to '', edit_post_path(post), :class => "icon-edit" %>
-        <%= link_to '', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "icon-trash" %>
-      </article>
-    <% end %>
-
-
+<% if is_admin %>
+  <%= link_to 'New Post', new_post_path %>
+<% end %>
 
 <br>
+<% @posts.each do |post| %>
+<article>
+  <h1 class="title-link"><small><%= post.name %></small><%= link_to post.title, post.link, :target => "_blank" %></h1>
+  
+  <% if is_admin %>
+    <%= link_to '', post, :class => "icon-eye-open" %>
+    <%= link_to '', edit_post_path(post), :class => "icon-edit" %>
+    <%= link_to '', post, method: :delete, data: { confirm: 'Are you sure?' }, :class => "icon-trash" %>
+  <% end %>
+</article>
+<% end %>
 
-<%= link_to 'New Post', new_post_path %>
+
+
+
