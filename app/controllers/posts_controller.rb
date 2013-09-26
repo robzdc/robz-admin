@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.joins(:category).select("posts.id, posts.title, posts.link, posts.status, posts.post_type, posts.comment_status, categories.name")
+    @posts = Post.joins(:category).select("posts.id, posts.title, posts.link, posts.refer, posts.status, posts.post_type, posts.comment_status, categories.name").where("posts.status = ?",1)
   end
 
   # GET /posts/1
