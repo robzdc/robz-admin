@@ -2953,6 +2953,9 @@ ul.icons-ul > li .icon-li {
 .icon-trash:before {
   content: "\f014";
 }
+.icon-trash{
+  cursor: pointer;
+}
 .icon-home:before {
   content: "\f015";
 }
@@ -10140,6 +10143,14 @@ article img {
   line-height: 1.25em;
   margin-bottom: 1em;
   font-weight: 100;
+  text-transform: uppercase;
+  color: #910000;
+}
+.title-link {
+  line-height: 1.25em;
+  margin-bottom: 1em;
+  font-weight: bold;
+  font-size: 1.8em;
   text-transform: uppercase;
   color: #910000;
 }

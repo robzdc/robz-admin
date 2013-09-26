@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:edit, :update, :destroy]
-  before_action :get_post, only: [:show]
+  before_action :set_post, only: [ :update, :destroy]
+  before_action :get_post, only: [:show, :edit]
 
   # GET /posts
   # GET /posts.json
@@ -74,7 +74,7 @@ class PostsController < ApplicationController
     end
   
     def get_post
-      @post = Post.joins(:category).select("posts.*, categories.name").first
+      @post = Post.joins(:category).select("posts.*, categories.name").where("posts.id = ?",params[:id]).first
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
