@@ -4,11 +4,12 @@
 
 <br>
 <% @posts.each do |post| %>
+<% refer = URI.parse(post.refer).host %>
 <article>
   <h1 class="title-link"><small><%= post.name %></small><%= link_to post.title, post.link, :target => "_blank" %></h1>
   <div class="rows">
     <span>I saw this on: </span>
-    <span class="reference"><%= link_to post.refer, new_post_path %></span>
+    <span class="reference"><%= link_to refer, post.refer %></span>
   </div>
   <% if is_admin %>
     <%= link_to '', post, :class => "icon-eye-open" %>
