@@ -7,12 +7,13 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     require 'uri'
-    @posts = Post.joins(:category).select("posts.id, posts.title, posts.link, posts.refer, posts.status, posts.post_type, posts.comment_status, categories.name").where("posts.status = ?",1)
+    @posts = Post.joins(:category).select("posts.id, posts.title, posts.link, posts.refer, posts.status, posts.post_type, posts.comment_status, categories.name").where("posts.status = ?",1)     
   end
 
   # GET /posts/1
   # GET /posts/1.json
   def show
+    
   end
 
   # GET /posts/new

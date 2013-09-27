@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!--
+      |                            |
+  _ \ |  _ \ __ `__ \  | __ \   _` |
+  __/ |  __/ |   |   | | |   | (   |
+\___|_|\___|_|  _|  _|_|_|  _|\____|
+                       web solutions
+-->
+<!--[if lt IE 7]> <html lang="en" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]> <html lang="en" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]> <html lang="en" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>Home | elemind, web solutions</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="elemind.com" name="author" />
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body class="home" data-spy="scroll" data-target=".documentation-nav">
+    <div class="container">
+        <div class="row">
+          <%= render 'shared/header' %>
+          <div class="main span9">
+            <!-- ####################################################################################################### -->
+            <!-- ####################################################################################################### -->
+            <!-- ####################################################################################################### -->
+            <!-- ####################################################################################################### -->
+            <section id="fof" class="clear">
+              <!-- ####################################################################################################### -->
+              <a class="go-back" href="javascript:history.go(-1)">Back<br>&laquo;</a>
+              <div class="positioned">
+                <h1>Restricted Area!</h1>
+                <p>You're not supposed to be here bro.</p>
+              </div>
+              <%= link_to 'Home<br>&raquo;'.html_safe, root_path, :class => 'go-home' %>
+             
+              <!-- ####################################################################################################### -->
+            </section>
+            <!-- ####################################################################################################### -->
+            <!-- ####################################################################################################### -->
+            <!-- ####################################################################################################### -->
+            <!-- ####################################################################################################### -->
+          </div>
+        </div>
+    </div>
+</body>
+</html>

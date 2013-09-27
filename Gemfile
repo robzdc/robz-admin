@@ -5,6 +5,8 @@ gem 'rails', '4.0.0'
 
 # Use mysql as the database for Active Record
 
+#Use Cancan
+gem "cancan"
 
 #Use Devise for users
 gem 'devise'
